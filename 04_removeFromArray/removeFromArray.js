@@ -1,11 +1,11 @@
-const removeFromArray = function(array, param1, param2, param3, param4) {
-    for (i = 0; i < array.length; i++) {
-        if (array[i] === param1 || array[i] === param2 || array[i] === param3 || array[i] === param4) {
-            array.splice(i, 1);
-            i--;
+const removeFromArray = function(array, ...args) {
+    let newArray = [];
+    array.forEach(element => {
+        if (!args.includes(element)) {
+            newArray.push(element);
         }
-    }
-    return array;
+    });
+    return newArray;
 };
 
 // Do not edit below this line
